@@ -6,7 +6,7 @@
 EUR_TO_US = 1.11
 
 def convert_usd_to_euro(usd):
-    """Convert USD to EURO.
+    """Convert USD to EUR.
     """
     return round(usd/1.11, 4)
 
