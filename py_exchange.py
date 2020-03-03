@@ -1,9 +1,13 @@
-#!/usr/bin/env/python 3
+#!/usr/bin/env python 3
 
 """Placholder.
 """
+from forex_python.converter import get_rate
 
-EUR_TO_US = 1.11
+EUR_TO_US=get_rate('EUR', 'USD')
+
+
+#EUR_TO_US = 1.11
 
 def convert_usd_to_eur(usd):
     """Convert USD to EUR.
