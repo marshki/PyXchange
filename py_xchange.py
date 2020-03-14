@@ -1,6 +1,6 @@
 #!/usr/bin/env python 3
 
-"""Currency conversion utility (in progress).
+"""Currency conversion utility.
 """
 
 import argparse
@@ -18,11 +18,9 @@ def convert_eur_to_usd(eur):
     """
     return round(eur*EUR_TO_USD, 4)
 
-#print(convert_usd_to_eur(10))
-#print(convert_eur_to_usd(5))
 
 def parse_cli_args():
-    """Define parser w/arguments.
+    """Define command line parser w/arguments.
     """
     parser = argparse.ArgumentParser()
     group = parser.add_mutually_exclusive_group()
@@ -31,16 +29,23 @@ def parse_cli_args():
     args = parser.parse_args()
     return args
 
-def conversion_table(col1
+def conversion_table(col1, col2_func, c1_hdr, c2_hdr):
+    """Formatted table with (2) columns and (2) headers.
+    """
 
+    print('+------------+------------+')
+    print('| {:^10} | {:^10} |'.format(c1_hdr, c2_hdr))
+    print('+------------+------------+')
+    for x_value in col1:
+        y_value = col2_func(x_value)
+        print('| {:10.4f} | {:10.4f} |'.format(x_value, y_value))
+    print('+------------+------------+')
 
 
 if __name__ == '__main__':
     args = parse_cli_args()
 
     if args.usd_to_eur:
-        args.usd_to_eur, convert_usd_to_eur, 'usd', 'eur'
-    elif args.eur_to_usd:
-        args.eur_to_usd, convert_eur_to_usd, 'eur', 'usd'
+        conversion_table(args.usd_to_eur, convert_usd_to_eur, 'usd', 'eur')
     else:
-        print('Past the args') 
+        conversion_table(args.eur_to_usd, convert_eur_to_usd, 'eur', 'usd')
