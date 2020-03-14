@@ -11,12 +11,14 @@ EUR_TO_USD = get_rate('EUR', 'USD')
 def convert_usd_to_eur(usd):
     """Convert USD to EUR.
     """
-    return round(usd/EUR_TO_USD, 4)
+    #return round(usd/EUR_TO_USD, 4)
+    return usd/EUR_TO_USD
 
 def convert_eur_to_usd(eur):
     """Convert EUR to USD.
     """
-    return round(eur*EUR_TO_USD, 4)
+    #return round(eur*EUR_TO_USD, 4)
+    return eur*EUR_TO_USD
 
 
 def parse_cli_args():
