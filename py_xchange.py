@@ -1,6 +1,6 @@
 #!/usr/bin/env python 3
 
-"""Currency conversion utility.
+"""Currency conversion utility w/argument parsing.
 """
 
 import argparse
@@ -11,15 +11,12 @@ EUR_TO_USD = get_rate('EUR', 'USD')
 def convert_usd_to_eur(usd):
     """Convert USD to EUR.
     """
-    #return round(usd/EUR_TO_USD, 4)
     return usd/EUR_TO_USD
 
 def convert_eur_to_usd(eur):
     """Convert EUR to USD.
     """
-    #return round(eur*EUR_TO_USD, 4)
     return eur*EUR_TO_USD
-
 
 def parse_cli_args():
     """Define command line parser w/arguments.
@@ -42,7 +39,6 @@ def conversion_table(col1, col2_func, c1_hdr, c2_hdr):
         y_value = col2_func(x_value)
         print('| {:10.4f} | {:10.4f} |'.format(x_value, y_value))
     print('+------------+------------+')
-
 
 if __name__ == '__main__':
     args = parse_cli_args()
