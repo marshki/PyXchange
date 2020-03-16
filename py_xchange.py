@@ -23,8 +23,8 @@ def parse_cli_args():
     """
     parser = argparse.ArgumentParser()
     group = parser.add_mutually_exclusive_group()
-    group.add_argument("--usd-to-eur", help="usd to eur", nargs='+', type=float)
-    group.add_argument("--eur-to-usd", help="eur to usd", nargs='+', type=float)
+    group.add_argument("--usd-to-eur", help="convert usd to eur", nargs='+', type=float)
+    group.add_argument("--eur-to-usd", help="convert eur to usd", nargs='+', type=float)
     args = parser.parse_args()
     return args
 
