@@ -21,7 +21,7 @@ def convert_eur_to_usd(eur):
 def parse_cli_args():
     """Define command line parser w/arguments.
     """
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="Currency conversion utility.")
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--usd-to-eur", help="convert usd to eur", nargs='+', type=float)
     group.add_argument("--eur-to-usd", help="convert eur to usd", nargs='+', type=float)
