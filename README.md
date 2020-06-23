@@ -18,9 +18,8 @@ CLI currency exchange program (for now).
       --eur-to-usd EUR_TO_USD [EUR_TO_USD ...]
                             convert eur to usd
 
---
 
-TODO
+### TODO
 ---
 
 - [ ] 
