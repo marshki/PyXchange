@@ -28,7 +28,7 @@ def parse_cli_args():
 
     args = parser.parse_args()
 
-    if args.ip is None:
+    if args.usd_to_eur or args.eur_to_usd is None:
         parser.error("Argument required. None given.")
 
     return args
