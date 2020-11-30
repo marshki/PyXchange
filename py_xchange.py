@@ -29,7 +29,8 @@ def parse_cli_args():
     args = parser.parse_args()
 
     if args.ip is None:
-        parser.error("Argument required. None given."
+        parser.error("Argument required. None given.")
+
     return args
 
 def conversion_table(col1, col2_func, c1_hdr, c2_hdr):
