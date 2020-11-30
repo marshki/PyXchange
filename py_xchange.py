@@ -25,7 +25,11 @@ def parse_cli_args():
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--usd-to-eur", help="convert usd to eur", nargs='+', type=float)
     group.add_argument("--eur-to-usd", help="convert eur to usd", nargs='+', type=float)
+
     args = parser.parse_args()
+
+    if args.ip is None:
+        parser.error("Argument required. None given."
     return args
 
 def conversion_table(col1, col2_func, c1_hdr, c2_hdr):
